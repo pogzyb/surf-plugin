@@ -1,25 +1,16 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "name": "Surf",
+  "description": "Scan before you Surf – Identify Spam and Phish in Real-time using Machine Learning.",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "homepage_url": "https://deep.surf",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Surf URL Scanner"
+  },
+  "icons": {
+    "16": "surf-16x16.png",
+    "48": "surf.png",
+    "128": "surf.png"
+  }
 }

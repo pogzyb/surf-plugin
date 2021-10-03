@@ -1,4 +1,6 @@
-body {
+html, body {
+  width: 300px;
+  height: 425px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,7 +9,229 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.mt-0 {
+  margin-top: 0px !important;
 }
+
+.mt-1 {
+  margin-top: 0.5rem !important;
+}
+
+.mt-3 {
+  margin-top: 1.0rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+
+.mb-1 {
+  margin-bottom: 1.0rem !important;
+}
+
+.ml-1 {
+  margin-left: 5px !important;
+}
+
+.lead {
+  font-weight: 300;
+}
+
+.d-inline {
+  display: inline;
+  width: 100%;
+}
+
+.d-inline-block {
+  display: inline-block;
+  width: 100%;
+}
+
+.no-decoration {
+  text-decoration: none !important;
+}
+
+.rounded-pill {
+  border-radius: 50rem !important;
+}
+
+.rounded-img {
+  border-radius: 0.5rem !important;
+  width: 250px !important;
+}
+
+.bi {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-dark {
+  color: #000 !important;
+}
+
+.text-info {
+  color: #0dcaf0;
+}
+
+.text-warning {
+  color: #eca219;
+}
+
+.text-danger {
+  color: #be2929;
+}
+
+.text-success {
+  color: #07b984;
+}
+
+
+.bg-info {
+  background-color: #0dcaf0;
+}
+
+.bg-light {
+  background-color: #ced4da;
+  color: #000 !important;
+}
+
+.bg-main {
+  background-color: #1d7edf;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-text {
+  font-weight: 200 !important;
+}
+
+.footer-text {
+  margin-top: 2px;
+  font-weight: 500;
+  font-size: x-small;
+  color: #888888;
+}
+
+.submit-btn {
+  padding: .275rem .75rem;
+  color: #fff;
+  line-height: 1.5;
+  border: 1px solid transparent;
+}
+
+.form-control {
+  padding: .375rem .75rem;
+  border: 1px solid #ced4da;
+  display: block;
+  width: 220px;
+}
+
+.hide {
+  display: none;
+}
+
+.shadow {
+  box-shadow: .125rem .25rem rgba(0,0,0,.075) !important;
+}
+
+.loader {
+  font-size: 14px !important;
+}
+
+.pill {
+  display: inline-block;
+  margin: auto;
+  padding: .35em .65em;
+  font-size: .75em;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: text-bottom;
+}
+
+.p-2 {
+  padding: 0.1rem !important;
+}
+
+@-moz-keyframes throbber-loader {
+  0% {
+    background: #dde2e7;
+  }
+  10% {
+    background: #1d7edf;
+  }
+  40% {
+    background: #dde2e7;
+  }
+}
+@-webkit-keyframes throbber-loader {
+  0% {
+    background: #dde2e7;
+  }
+  10% {
+    background: #1d7edf;
+  }
+  40% {
+    background: #dde2e7;
+  }
+}
+@keyframes throbber-loader {
+  0% {
+    background: #dde2e7;
+  }
+  10% {
+    background: #1d7edf;
+  }
+  40% {
+    background: #dde2e7;
+  }
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.throbber-loader:not(:required) {
+  -moz-animation: throbber-loader 1000ms 300ms infinite ease-out;
+  -webkit-animation: throbber-loader 1000ms 300ms infinite ease-out;
+  animation: throbber-loader 1000ms 300ms infinite ease-out;
+  background: #dde2e7;
+  display: inline-block;
+  position: relative;
+  text-indent: -9999px;
+  width: 0.9em;
+  height: 1.5em;
+  margin: 0 1.6em;
+  border-radius: 0.5rem;
+}
+
+.throbber-loader:not(:required):before, .throbber-loader:not(:required):after {
+  background: #dde2e7;
+  content: '\x200B';
+  display: inline-block;
+  width: 0.9em;
+  height: 1.5em;
+  position: absolute;
+  top: 0;
+  border-radius: 0.5rem;
+}
+
+.throbber-loader:not(:required):before {
+  -moz-animation: throbber-loader 1000ms 150ms infinite ease-out;
+  -webkit-animation: throbber-loader 1000ms 150ms infinite ease-out;
+  animation: throbber-loader 1000ms 150ms infinite ease-out;
+  left: -1.6em;
+  border-radius: 0.5rem;
+}
+
+.throbber-loader:not(:required):after {
+  -moz-animation: throbber-loader 1000ms 450ms infinite ease-out;
+  -webkit-animation: throbber-loader 1000ms 450ms infinite ease-out;
+  animation: throbber-loader 1000ms 450ms infinite ease-out;
+  right: -1.6em;
+  border-radius: 0.5rem;
+}
+
