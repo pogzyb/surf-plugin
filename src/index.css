@@ -10,7 +10,7 @@ html, body {
 }
 
 .mt-0 {
-  margin-top: 0px !important;
+  margin-top: 0rem !important;
 }
 
 .mt-1 {
@@ -22,14 +22,18 @@ html, body {
 }
 
 .mb-0 {
-  margin-bottom: 0px !important;
+  margin-bottom: 0rem !important;
 }
 
 .mb-1 {
   margin-bottom: 1.0rem !important;
 }
 
-.ml-1 {
+.mb-sm {
+  margin-bottom: 10px !important;
+}
+
+.ml-5px {
   margin-left: 5px !important;
 }
 
@@ -89,24 +93,16 @@ html, body {
   color: #07b984;
 }
 
-
-.bg-info {
-  background-color: #0dcaf0;
-}
-
 .bg-light {
-  background-color: #ced4da;
+  background-color: #ced4da !important;
   color: #000 !important;
 }
 
-.bg-main {
-  background-color: #1d7edf;
+.submit-text {
   font-weight: bold;
   cursor: pointer;
-}
-
-.submit-text {
   font-weight: 200 !important;
+  color: #fff;
 }
 
 .footer-text {
@@ -117,8 +113,8 @@ html, body {
 }
 
 .submit-btn {
+  background-color: #1d7edf;
   padding: .275rem .75rem;
-  color: #fff;
   line-height: 1.5;
   border: 1px solid transparent;
 }
