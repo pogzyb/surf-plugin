@@ -1,7 +1,7 @@
 {
   "name": "Surf",
   "description": "Scan before you Surf – Identify Spam and Phish in Real-time using Machine Learning.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "manifest_version": 2,
   "homepage_url": "https://deep.surf",
   "browser_action": {
