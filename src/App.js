@@ -4,8 +4,12 @@ Author:  Joe Obarzanek
 Contact: mailman@deep.surf
 */
 import './App.css';
+require('es6-promise').polyfill();
 
 const API_VERSION = 'v1'
+
+const originalFetch = require('isomorphic-fetch');
+const fetch = require('fetch-retry')(originalFetch);
 
 const ok = '<span class="text-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor" viewBox="0 0 16 16"><path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52 2.25 8.184z"/></svg> Low Risk</span>';
 const phish = '<span class="text-warning"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg> Potential Phish</span>';
@@ -48,6 +52,7 @@ function scan(e) {
   // scan-plugin will only the return uuid, prediction, and screenshot
   fetch('https://engine.deep.surf/api/' + API_VERSION + '/scanner/scan-plugin', {
     method: 'POST',
+    mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
   })
@@ -120,7 +125,7 @@ function App() {
             <h4 className="p-2 mb-5px mt-0">
               <span id="prediction" className="pill rounded-pill"></span> 
               {/* report btn */}
-              <span className="pill rounded-pill bg-light">
+              <span className="mr-1 pill rounded-pill bg-light">
                 <a id="link" className="text-dark no-decoration" target="_blank" rel="noreferrer" href="https://deep.surf/">  
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
                     <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>
@@ -147,7 +152,9 @@ function App() {
         </div>
         <hr className="mt-3" width="75"/>
         {/* footer and version info */}
-        <small className="footer-text">v{process.env.REACT_APP_VERSION_TAG} • {process.env.REACT_APP_GIT_HASH}</small>
+        <small className="footer-text">
+          v{process.env.REACT_APP_VERSION_TAG} • {process.env.REACT_APP_GIT_HASH} • <a className="no-decoration footer-text" target="_blank" rel="noreferrer" href="https://deep.surf">deep.surf </a>
+        </small>
       </header>
     </div>
   );
